@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "hmiinteraction.h": "c",
+        "imitatefunction.h": "c",
+        "interfacedefine.h": "c",
+        "hmilinteradef.h": "c",
+        "hmipushbutton.h": "c",
+        "stdbool.h": "c",
+        "drivefunction.h": "c",
+        "hmidispscreen.h": "c",
+        "imagefunction.h": "c",
+        "ws.h": "c"
+    }
+}

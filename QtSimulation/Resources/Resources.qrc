@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Tool/close.png</file>
+        <file>Tool/exit.png</file>
+        <file>Tool/milize.png</file>
+        <file>Tool/setting.png</file>
+        <file>Other/18.png</file>
+        <file>Loge/Loge_2.jpg</file>
+        <file>Loge/Loge5.jpg</file>
+        <file>Other/7.png</file>
+        <file>Other/open.jpg</file>
+        <file>Other/22.png</file>
+        <file>Tool/loge.ico</file>
+        <file>Loge/head.ico</file>
+    </qresource>
+</RCC>

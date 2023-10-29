@@ -1,0 +1,339 @@
+
+
+/*********************************
+ * @Authour:Miraitowance/Miraitowa*
+ * @Function:鲸落の入海 ~(_0.0_)- *
+ ********************************/
+
+#ifndef __Miraitowance_H_
+#define __Miraitowance_H_
+
+//-------------------------INCLUDE-------------------------
+
+//-------------------------INCLUDE-------------------------
+
+//-------------------------DEFINE--------------------------
+
+#define WScreen 240
+#define HScreen 135
+
+#define FColor Drv_PINK
+#define BColor Drv_BLACK
+//@#Interface------------------------------------------------
+#define USERInterface 0
+#define InitConfig_ImitateFunc()                USERInterface
+#define SetPosition_ImitateFunc(x1, y1, x2, y2) USERInterface
+#define WritePixel_ImitateFunc(color)           USERInterface
+#define SetFrontBack_ImitateFunc(fc, bc)        USERInterface
+#define SetFillClear_ImitateFunc(color)         USERInterface
+#define DrawPoint_ImitateFunc(x, y, color)      USERInterface
+#define ClearSpecial_ImitateFunc(Y, color)      USERInterface
+//@#Interface------------------------------------------------
+
+typedef unsigned char Drv_Uchar8Type;
+typedef unsigned short int Drv_Uint16Type;
+typedef unsigned int Drv_Uint32Type;
+
+#define Drvnullprt (Drv_Uint16Type *)0
+
+#define Drv_WHITE 0xFFFF                 // 白色
+#define Drv_BLACK 0x0000                 // 黑色
+#define Drv_BLUE 0x001F                  // 蓝色
+#define Drv_PURPLE 0XF81F                // 紫色
+#define Drv_PINK 0XFE19                  // 粉色
+#define Drv_RED 0xF800                   // 红色
+#define Drv_MAGENTA 0xF81F               // 品红
+#define Drv_GREEN 0x07E0                 // 绿色
+#define Drv_CYAN 0x07FF                  // 青色
+#define Drv_YELLOW 0xFFE0                // 黄色
+#define Drv_BROWN 0XBC40                 // 棕色
+#define Drv_GRAY 0X8430                  // 灰色
+#define Drv_Black 0X0                    // 黑色
+#define Drv_Dimgray 0X6B4D               // 昏灰
+#define Drv_Gray 0X8410                  // 灰色
+#define Drv_DarkGray 0XAD55              // 暗灰
+#define Drv_Silver 0XC618                // 银色
+#define Drv_LightGray 0XD69A             // 亮灰色
+#define Drv_Gainsboro 0XDEFB             // 庚斯博罗灰
+#define Drv_WhiteSmoke 0XF7BE            // 白烟色
+#define Drv_White 0XFFFF                 // 白色
+#define Drv_Snow 0XFFDF                  // 雪色
+#define Drv_IronGray 0X62CA              // 铁灰色
+#define Drv_SandBeige 0XE618             // 沙棕
+#define Drv_RosyBrown 0XBC71             // 玫瑰褐
+#define Drv_LightCoral 0XF410            // 亮珊瑚色
+#define Drv_IndianRed 0XCAEB             // 印度红
+#define Drv_Brown 0XA145                 // 褐色
+#define Drv_FireBrick 0XB104             // 耐火砖红
+#define Drv_Maroon 0X8000                // 栗色
+#define Drv_DarkRed 0X8800               // 暗红
+#define Drv_StrongRed 0XE000             // 鲜红
+#define Drv_Red 0XF800                   // 红色
+#define Drv_Persimmon 0XFA68             // 柿子橙
+#define Drv_MistyRose 0XFF3C             // 雾玫瑰色
+#define Drv_Salmon 0XFC0E                // 鲑红
+#define Drv_Scarlet 0XF920               // 腥红
+#define Drv_Tomato 0XFB08                // 蕃茄红
+#define Drv_DarkSalmon 0XECAF            // 暗鲑红
+#define Drv_Coral 0XFBEA                 // 珊瑚红
+#define Drv_OrangeRed 0XFA20             // 橙红
+#define Drv_Light Salmon 0XFD0F          // 亮鲑红
+#define Drv_Vermilion 0XFA60             // 朱红
+#define Drv_Sienna 0XA285                // 赭黄
+#define Drv_TropicalOrange 0XFC06        // 热带橙
+#define Drv_Camel 0XA348                 // 驼色
+#define Drv_Apricot 0XE4CC               // 杏黄
+#define Drv_CoconutBrown 0X48E0          // 椰褐
+#define Drv_Seashell 0XFFBD              // 海贝色
+#define Drv_SaddleBrown 0X8A22           // 鞍褐
+#define Drv_Chocolate 0XD343             // 巧克力色
+#define Drv_BurntOrange 0XCAA0           // 燃橙
+#define Drv_SunOrange 0XFB80             // 阳橙
+#define Drv_PeachPuff 0XFED7             // 粉扑桃色
+#define Drv_SandBrown 0XF52C             // 沙褐
+#define Drv_Bronze 0XBB86                // 古铜色
+#define Drv_Linen 0XFF9C                 // 亚麻色
+#define Drv_HoneyOrange 0XFD8C           // 蜜橙
+#define Drv_Peru 0XCC27                  // 秘鲁色
+#define Drv_Sepia 0X7202                 // 乌贼墨色
+#define Drv_Ocher 0XCBA4                 // 赭色
+#define Drv_Bisque 0XFF38                // 陶坯黄
+#define Drv_Tangerine 0XF420             // 橘色
+#define Drv_DarkOrange 0XFC60            // 暗橙
+#define Drv_AntiqueWhite 0XFF5A          // 古董白
+#define Drv_Tan 0XD5B1                   // 日晒色
+#define Drv_BurlyWood 0XDDD0             // 硬木色
+#define Drv_BlanchedAlmond 0XFF59        // 杏仁白
+#define Drv_NavajoWhite 0XFEF5           // 那瓦霍白
+#define Drv_Marigold 0XFCC0              // 万寿菊黄
+#define Drv_PapayaWhip 0XFF7A            // 蕃木瓜色
+#define Drv_PaleOcre 0XCD91              // 灰土色
+#define Drv_Khaki 0X9B43                 // 卡其色
+#define Drv_Moccasin 0XFF36              // 鹿皮鞋色
+#define Drv_OldLace 0XFFBC               // 旧蕾丝色
+#define Drv_Wheat 0XF6F6                 // 小麦色
+#define Drv_Peach 0XFF36                 // 桃色
+#define Drv_Orange 0XFD20                // 橙色
+#define Drv_FloralWhite 0XFFDE           // 花卉白
+#define Drv_Goldenrod 0XDD24             // 金菊色
+#define Drv_DarkGoldenrod 0XBC21         // 暗金菊色
+#define Drv_Coffee 0X49C0                // 咖啡色
+#define Drv_Jasmine 0XE60B               // 茉莉黄
+#define Drv_Amber 0XFDE0                 // 琥珀色
+#define Drv_Cornsilk 0XFFDB              // 玉米丝色
+#define Drv_ChromeYellow 0XE5C0          // 铬黄
+#define Drv_Golden 0XFEA0                // 金色
+#define Drv_LemonChiffon 0XFFD9          // 柠檬绸色
+#define Drv_LightKhaki 0XF731            // 亮卡其色
+#define Drv_PaleGoldenrod 0XEF55         // 灰金菊色
+#define Drv_DarkKhaki 0XBDAD             // 暗卡其色
+#define Drv_Mimosa 0XE6C6                // 含羞草黄
+#define Drv_Cream 0XFFFA                 // 奶油色
+#define Drv_Ivory 0XFFFE                 // 象牙色
+#define Drv_Beige 0XF7BB                 // 米黄色
+#define Drv_LightYellow 0XFFFC           // 亮黄
+#define Drv_LightGoldenrodYellow 0XFFDA  // 亮金菊黄
+#define Drv_ChampagneYellow 0XFFF3       // 香槟黄
+#define Drv_Mustard 0XCE69               // 芥末黄
+#define Drv_MoonYellow 0XFFE9            // 月黄
+#define Drv_Olive 0X8400                 // 橄榄色
+#define Drv_CanaryYellow 0XFFE0          // 鲜黄
+#define Drv_Yellow 0XFFE0                // 黄色
+#define Drv_MossGreen 0X6BA4             // 苔藓绿
+#define Drv_LightLime 0XCFE0             // 亮柠檬绿
+#define Drv_OliveDrab 0X6C64             // 橄榄军服绿
+#define Drv_YellowGreen 0X9E66           // 黄绿
+#define Drv_DarkOliveGreen 0X5345        // 暗橄榄绿
+#define Drv_AppleGreen 0X8F20            // 苹果绿
+#define Drv_GreenYellow 0XAFE5           // 绿黄
+#define Drv_GrassGreen 0X9F29            // 草绿
+#define Drv_LawnGreen 0X7FE0             // 草坪绿
+#define Drv_Chartreuse 0X7FE0            // 查特酒绿
+#define Drv_FoliageGreen 0X75C7          // 叶绿
+#define Drv_FreshLeaves 0X9FE9           // 嫩绿
+#define Drv_BrightGreen 0X67E0           // 明绿
+#define Drv_CobaltGreen 0X67EB           // 钴绿
+#define Drv_Honeydew 0XF7FE              // 蜜瓜绿
+#define Drv_DarkSeaGreen 0X8DF1          // 暗海绿
+#define Drv_LightGreen 0X9772            // 亮绿
+#define Drv_PaleGreen 0X9FD3             // 灰绿
+#define Drv_IvyGreen 0X35E6              // 常春藤绿
+#define Drv_ForesGreen 0X2444            // 森林绿
+#define Drv_LimeGreen 0X3666             // 柠檬绿
+#define Drv_DarkGreen 0X320              // 暗绿
+#define Drv_Green 0X400                  // 绿色
+#define Drv_Lime 0X7E0                   // 鲜绿色
+#define Drv_Malachite 0X2605             // 孔雀石绿
+#define Drv_Mint 0X14C5                  // 薄荷绿
+#define Drv_CeladonGreen 0X7731          // 青瓷绿
+#define Drv_Emerald 0X564F               // 碧绿
+#define Drv_TurquoiseGreen 0X4F30        // 绿松石绿
+#define Drv_Veridian 0X13A6              // 铬绿
+#define Drv_HorizonBlue 0XA7F9           // 苍色
+#define Drv_SeaGreen 0X2C4A              // 海绿
+#define Drv_MediumSeaGreen 0X3D8E        // 中海绿
+#define Drv_MintCream 0XF7FF             // 薄荷奶油色
+#define Drv_SpringGreen 0X7F0            // 春绿
+#define Drv_PeacockGreen 0X50B           // 孔雀绿
+#define Drv_MediumSpringGreen 0X7D3      // 中春绿色
+#define Drv_MediumAquamarine 0X6675      // 中碧蓝色
+#define Drv_Aquamarine 0X7FFA            // 碧蓝色
+#define Drv_CyanBlue 0XDF1               // 青蓝
+#define Drv_AquaBlue 0X67FC              // 水蓝
+#define Drv_TurquoiseBlue 0X3739         // 绿松石蓝
+#define Drv_Turquoise 0X36B9             // 绿松石色
+#define Drv_LightSeaGreen 0X2595         // 亮海绿
+#define Drv_MediumTurquoise 0X4E99       // 中绿松石色
+#define Drv_LightCyan 0XE7FF             // 亮青
+#define Drv_BabyBlue 0XE7FF              // 浅蓝
+#define Drv_PaleTurquoise 0XAF7D         // 灰绿松石色
+#define Drv_DarkSlateGray 0X2A69         // 暗岩灰
+#define Drv_Teal 0X410                   // 凫绿
+#define Drv_DarkCyan 0X451               // 暗青
+#define Drv_Cyan 0X7FF                   // 青色
+#define Drv_Aqua 0XAEFC                  // 水色
+#define Drv_DarkTurquoise 0X67A          // 暗绿松石色
+#define Drv_CadetBlue 0X5CF4             // 军服蓝
+#define Drv_PeacocBlue 0X411             // 孔雀蓝
+#define Drv_PowderBlue 0XB71C            // 婴儿粉蓝
+#define Drv_StrongBlue 0X30E             // 浓蓝
+#define Drv_LightBlue 0XAEDC             // 亮蓝
+#define Drv_PaleBlue 0X7DD9              // 灰蓝
+#define Drv_SaxeBlue 0X44D6              // 萨克斯蓝
+#define Drv_DeepSkyBlue 0X5FF            // 深天蓝
+#define Drv_SkyBlue 0X867D               // 天蓝
+#define Drv_LightSkyBlue 0X867F          // 亮天蓝
+#define Drv_MarineBlue 0X22F             // 水手蓝
+#define Drv_Prussianblue 0X18A           // 普鲁士蓝
+#define Drv_SteelBlue 0X4416             // 钢青色
+#define Drv_AliceBlue 0XF7DF             // 爱丽丝蓝
+#define Drv_SlateGray 0X7412             // 岩灰
+#define Drv_LightSlateGray 0X7453        // 亮岩灰
+#define Drv_DodgerBlue 0X1C9F            // 道奇蓝
+#define Drv_MineralBlue 0X273            // 矿蓝
+#define Drv_Azure 0X3FF                  // 湛蓝
+#define Drv_WedgwoodBlue 0X5437          // 韦奇伍德瓷蓝
+#define Drv_LightSteelBlue 0XB63B        // 亮钢蓝
+#define Drv_CobaltBlue 0X235             // 钴蓝
+#define Drv_PaleDenim 0X5C38             // 灰丁宁蓝
+#define Drv_CornflowerBlue 0X64BD        // 矢车菊蓝
+#define Drv_SalviaBlue 0X4C1C            // 鼠尾草蓝
+#define Drv_DarkPowderBlue 0X193         // 暗婴儿粉蓝
+#define Drv_Sapphire 0X92C               // 蓝宝石色
+#define Drv_InternationalKleinBlue 0X174 // 国际奇连蓝
+#define Drv_Ceruleanblue 0X2A97          // 蔚蓝
+#define Drv_RoyalBlue 0X435C             // 品蓝
+#define Drv_DarkMineralBlue 0X21AF       // 暗矿蓝
+#define Drv_Ultramarine 0X19F            // 极浓海蓝
+#define Drv_LapisLazuli 0X99F            // 天青石蓝
+#define Drv_GhostWhite 0XFFDF            // 幽灵白
+#define Drv_Lavender 0XE73F              // 薰衣草紫
+#define Drv_Periwinkle 0XCE7F            // 长春花色
+#define Drv_MidnightBlue 0X18CE          // 午夜蓝
+#define Drv_NavyBlue 0X10                // 藏青
+#define Drv_DarkBlue 0X11                // 暗蓝
+#define Drv_MediumBlue 0X19              // 中蓝
+#define Drv_Blue 0X1F                    // 蓝色
+#define Drv_Wisteria 0X5A9C              // 紫藤色
+#define Drv_DarkSlateBlue 0X49F1         // 暗岩蓝
+#define Drv_SlateBlue 0X6AD9             // 岩蓝
+#define Drv_MediumSlateBlue 0X7B5D       // 中岩蓝
+#define Drv_Mauve 0X621F                 // 木槿紫
+#define Drv_Lilac 0XB4DF                 // 紫丁香色
+#define Drv_MediumPurple 0X939B          // 中紫红
+#define Drv_Amethyst 0X6199              // 紫水晶色
+#define Drv_GrayishPurple 0X83B4         // 浅灰紫红
+#define Drv_Heliotrope 0X5017            // 缬草紫
+#define Drv_MineralViolet 0XBD19         // 矿紫
+#define Drv_BlueViolet 0X895C            // 蓝紫
+#define Drv_Violet 0X881F                // 紫罗兰色
+#define Drv_Indigo 0X4810                // 靛色
+#define Drv_DarkOrchid 0X9999            // 暗兰紫
+#define Drv_DarkViolet 0X901A            // 暗紫
+#define Drv_Pansy 0X7014                 // 三色堇紫
+#define Drv_Mallow 0XDA7F                // 锦葵紫
+#define Drv_OperaMauve 0XE41F            // 优品紫红
+#define Drv_MediumOrchid 0XBABA          // 中兰紫
+#define Drv_PailLilac 0XE67C             // 淡紫丁香色
+#define Drv_Thistle 0XDDFB               // 蓟紫
+#define Drv_Clematis 0XCD19              // 铁线莲紫
+#define Drv_Plum 0XDD1B                  // 梅红色
+#define Drv_LightViolet 0XEC1D           // 亮紫
+#define Drv_Purple 0X8010                // 紫色
+#define Drv_DarkMagenta 0X8811           // 暗洋红
+#define Drv_Magenta 0XF81F               // 洋红
+#define Drv_Fuchsia 0XF014               // 品红
+#define Drv_Orchid 0XDB9A                // 兰紫
+#define Drv_PearlPink 0XFD9C             // 浅珍珠红
+#define Drv_OldRose 0XBAB3               // 陈玫红
+#define Drv_RosePink 0XFB39              // 浅玫瑰红
+#define Drv_MediumVioletRed 0XC0B0       // 中青紫红
+#define Drv_MagentaRose 0XF874           // 洋玫瑰红
+#define Drv_Rose 0XF80F                  // 玫瑰红
+#define Drv_Ruby 0XC810                  // 红宝石色
+#define Drv_Camellia 0XE1D2              // 山茶红
+#define Drv_DeepPink 0XF8B2              // 深粉红
+#define Drv_Flamingo 0XE457              // 火鹤红
+#define Drv_CoralPink 0XFC17             // 浅珊瑚红
+#define Drv_HotPink 0XFB56               // 暖粉红
+#define Drv_Burgundy 0X4004              // 勃艮第酒红
+#define Drv_SpinelRed 0XFB96             // 尖晶石红
+#define Drv_Carmine 0XE00B               // 胭脂红
+#define Drv_BabyPink 0XFEDC              // 浅粉红
+#define Drv_CardinalRed 0X9806           // 枢机红
+#define Drv_LavenderBlush 0XFF9E         // 薰衣草紫红
+#define Drv_PaleVioletRed 0XDB92         // 灰紫红
+#define Drv_Cerise 0XD98C                // 樱桃红
+#define Drv_SalmonPink 0XFC13            // 浅鲑红
+#define Drv_Crimson 0XD8A7               // 绯红
+#define Drv_Pink 0XFE19                  // 粉红
+#define Drv_LightPink 0XFDB8             // 亮粉红
+#define Drv_ShellPink 0XFD97             // 壳黄红
+#define Drv_AlizarinCrimson 0XE126       // 茜红
+
+
+//-------------------------DEFINE--------------------------
+
+//-------------------------FUNCTION------------------------
+void GuideChese_DrvFunction(    Drv_Uint16Type x,
+                                Drv_Uint16Type y,
+                                Drv_Uint16Type fc,
+                                Drv_Uint16Type bc,
+                                Drv_Uchar8Type *s   );
+
+void DisplayInt32Type_DrvFunction(    Drv_Uint16Type x,
+                                      Drv_Uint16Type y,
+                                      Drv_Uint16Type fc,
+                                      Drv_Uint16Type bc,
+                                      const int      dat,
+                                      Drv_Uchar8Type num);
+
+void DisplayFloatType_DrvFunction( Drv_Uint16Type x,  Drv_Uint16Type y,
+                                   Drv_Uint16Type fc, Drv_Uint16Type bc,
+                                   const float dat,
+                                   Drv_Uchar8Type num,
+                                   Drv_Uchar8Type pointnum);  
+
+void ShowImage_DrvFunction(const unsigned short *Sprt,
+                            Drv_Uint16Type X,
+                            Drv_Uint16Type Y,
+                            Drv_Uint16Type Width,
+                            Drv_Uint16Type Hight);
+                            
+void ShowSquare_DrvFunction(const unsigned char *Sprt,
+                            Drv_Uint16Type X,
+                            Drv_Uint16Type Y,
+                            Drv_Uint16Type fc,
+                            Drv_Uint16Type bc,
+                            Drv_Uint16Type Width,
+                            Drv_Uint16Type Hight);
+//-------------------------FUNCTION------------------------
+
+//-----------------------------INCLUDE-------------------------------
+#include "HMIPushButton.h"
+#include "HMIDispScreen.h"
+#include "FontFunction.h"
+#include "FImageFunction.h"
+//-----------------------------INCLUDE-------------------------------
+
+#endif /*_@Authour:Miraitowance/Miraitowa*/
